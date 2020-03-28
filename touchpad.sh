@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function touch(){
-  touchpad="$(xinput | sed -n 's/.*Touch.*id=\([0-9][0-9]\).*/\1/p')"
+  touchpad="$(xinput | sed -n 's/.*DELL.*Touch.*id=\([0-9][0-9]\).*/\1/p')"
   if xinput list-props $touchpad | grep "Device Enabled (.*):.*1" >/dev/null
   then
     xinput disable $touchpad
